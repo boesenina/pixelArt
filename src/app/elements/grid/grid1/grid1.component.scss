@@ -1,0 +1,14 @@
+@import "src/app/pixel-styles.scss";
+
+.grid1{
+
+background-color: map-get($mat-accent, "main");
+color: #fff;
+display: flex;
+//align-items: center;
+justify-content: center;
+
+width: 500px;
+min-height: calc(100vh - #{$header_height} - #{$footer_height} - 200px);
+max-height: calc(100vh - #{$header_height} - #{$footer_height} - 200px);
+overflow-y: auto; }

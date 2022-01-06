@@ -1,0 +1,48 @@
+@import "src/app/pixel-styles.scss";
+
+.menu {
+  background-color: map-get($mat-accent, "main");
+  color: #fff;
+
+
+
+
+  width: 300px;
+  min-height: calc(100vh - #{$header_height} - #{$footer_height});
+  max-height: calc(100vh - #{$header_height} - #{$footer_height});
+
+
+  // .example-radio-group {
+  //   display: flex;
+  //   flex-direction: column;
+  //   margin: 15px 0;
+  // }
+
+  // .radio-button {
+  //   margin: 50px;
+
+
+  //   :hover {
+  //     color: map-get($mat-primary, "darker");
+  //   }
+  // }
+
+
+
+
+  .example-radio-group {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 10px;
+  }
+
+  .example-radio-button {
+    margin: 5px;
+    :hover {
+          color: map-get($mat-primary, "darker");
+        }
+  }
+
+
+}

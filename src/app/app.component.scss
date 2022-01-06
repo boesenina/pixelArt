@@ -1,0 +1,31 @@
+@import "src/app/pixel-styles.scss";
+
+
+.main{
+  display: flex;
+  justify-content: space-between;
+
+
+background-color: $dark-bg-tooltip;
+
+min-height: calc(
+  100vh - #{$header_height} - #{$footer_height}
+);
+max-height: calc(
+  100vh - #{$header_height} - #{$footer_height}
+);
+overflow-y: auto;
+
+.menu{
+
+  justify-content: flex-start;
+
+}
+
+.grid1{
+  margin-right: 400px;
+  margin-top: 100px;
+}
+
+
+}

@@ -1,0 +1,10 @@
+@import "src/app/pixel-styles.scss";
+
+
+.title{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $footer_height;
+  background-color: map-get($mat-primary, "main");}
