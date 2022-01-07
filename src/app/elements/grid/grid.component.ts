@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { HostListener } from '@angular/core';
+import { Component, ElementRef, OnInit,Input, OnDestroy } from '@angular/core';
+import { PaintingMode, DrawingGridService, Pixel } from 'ngx-drawing-grid';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { ColorPickerService } from 'src/app/services/color-picker.service';
+
+
 
 @Component({
   selector: 'pa-grid',
@@ -6,10 +13,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grid.component.scss']
 })
 export class GridComponent implements OnInit {
+  @Input() grid:any;
 
-  constructor() { }
 
-  ngOnInit(): void {
+
+  constructor(
+
+
+  ) {console.log(this.grid);}
+
+  ngOnInit() {
+
+
+
   }
 
+
 }
+
+

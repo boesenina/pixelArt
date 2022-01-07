@@ -5,10 +5,44 @@
 background-color: map-get($mat-accent, "main");
 color: #fff;
 display: flex;
-//align-items: center;
-justify-content: center;
 
-width: 500px;
-min-height: calc(100vh - #{$header_height} - #{$footer_height} - 200px);
-max-height: calc(100vh - #{$header_height} - #{$footer_height} - 200px);
-overflow-y: auto; }
+justify-content: center;
+flex-direction: column;
+  align-items: center;
+ // margin-left: 300px;
+
+
+
+
+// min-width:  calc(100vh  - 50px);
+// max-width:  calc(100vh  - 50px);
+min-width: 1000px;
+max-width: 1000px;
+min-height: calc(100vh - #{$header_height} - #{$footer_height} - 100px);
+max-height: calc(100vh - #{$header_height} - #{$footer_height} - 100px);
+overflow-y: auto;
+
+
+mat-toolbar {
+  @include mat-elevation(8);
+  font-weight: 300;
+  margin-bottom: 10px;
+  background-color: $dark-background;
+  color:map-get($mat-primary, "main");
+
+  mat-icon {
+    margin-right: 16px;
+  }
+}
+
+
+color-picker {
+  right: 20px;
+ // top: 300px;
+
+}
+
+
+
+
+}

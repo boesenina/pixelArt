@@ -4,17 +4,17 @@ import { Subject, takeUntil } from 'rxjs';
 import { ColorPickerService } from 'src/app/services/color-picker.service';
 
 @Component({
-  selector: 'pa-grid1',
-  templateUrl: './grid1.component.html',
-  styleUrls: ['./grid1.component.scss']
+  selector: 'pa-grid2',
+  templateUrl: './grid2.component.html',
+  styleUrls: ['./grid2.component.scss']
 })
-export class Grid1Component implements OnInit {
+export class Grid2Component implements OnInit {
 
   private readonly destroy$: Subject<void> = new Subject<void>();
 
   width: number = 32;
   height: number= 32;
-  pixelSize = 60;
+  pixelSize = 40;
 
 
   private paintingMode: PaintingMode;

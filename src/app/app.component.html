@@ -2,8 +2,9 @@
 
 <pa-header></pa-header>
 <div class="main">
-  <pa-menu class="menu"></pa-menu>
-<pa-grid class="grid1"></pa-grid>
+  <pa-menu class="menu" (newItemEvent)="addItem($event)"></pa-menu>
+<pa-grid class="grid1"
+[grid]="grid"></pa-grid>
 
 </div>
 <pa-footer></pa-footer>

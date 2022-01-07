@@ -1,3 +1,33 @@
-<div class="grid1">
-  <span>Grid1 8x8</span>
-</div>
+<mat-card class="grid1" >
+
+  <mat-toolbar  >
+    <mat-icon color="primary">brush</mat-icon>
+    Drawing Grid
+  </mat-toolbar>
+
+  <div *ngIf="grid; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <div *ngIf="grid=== '8 x 8';then thenBlock1"></div>
+    <ng-template #thenBlock1> <pa-grid1></pa-grid1></ng-template>
+    <div *ngIf="grid=== '12 x 12';then thenBlock2"></div>
+    <ng-template #thenBlock2> <pa-grid2></pa-grid2></ng-template>
+    <div *ngIf="grid=== '16 x 16';then thenBlock3"></div>
+    <ng-template #thenBlock3> <pa-grid3></pa-grid3></ng-template>
+    <div *ngIf="grid=== '32 x 32';then thenBlock4"></div>
+    <ng-template #thenBlock4> <pa-grid4></pa-grid4></ng-template>
+
+
+    </ng-template>
+
+
+
+<ng-template #elseBlock>
+  <pa-grid1></pa-grid1>
+
+</ng-template>
+
+
+
+
+<color-picker  ></color-picker>
+</mat-card>

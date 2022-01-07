@@ -1,20 +1,21 @@
+
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { PaintingMode, DrawingGridService, Pixel } from 'ngx-drawing-grid';
 import { Subject, takeUntil } from 'rxjs';
 import { ColorPickerService } from 'src/app/services/color-picker.service';
 
 @Component({
-  selector: 'pa-grid1',
-  templateUrl: './grid1.component.html',
-  styleUrls: ['./grid1.component.scss']
+  selector: 'pa-grid4',
+  templateUrl: './grid4.component.html',
+  styleUrls: ['./grid4.component.scss']
 })
-export class Grid1Component implements OnInit {
+export class Grid4Component implements OnInit {
 
   private readonly destroy$: Subject<void> = new Subject<void>();
 
   width: number = 32;
   height: number= 32;
-  pixelSize = 60;
+  pixelSize = 23;
 
 
   private paintingMode: PaintingMode;

@@ -1,20 +1,26 @@
+
+import { HostListener } from '@angular/core';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { PaintingMode, DrawingGridService, Pixel } from 'ngx-drawing-grid';
 import { Subject, takeUntil } from 'rxjs';
 import { ColorPickerService } from 'src/app/services/color-picker.service';
 
 @Component({
-  selector: 'pa-grid1',
-  templateUrl: './grid1.component.html',
-  styleUrls: ['./grid1.component.scss']
+  selector: 'pa-grid3',
+  templateUrl: './grid3.component.html',
+  styleUrls: ['./grid3.component.scss']
 })
-export class Grid1Component implements OnInit {
+export class Grid3Component implements OnInit {
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    event.target.innerWidth;
+  }
 
   private readonly destroy$: Subject<void> = new Subject<void>();
 
   width: number = 32;
   height: number= 32;
-  pixelSize = 60;
+  pixelSize = 30;
 
 
   private paintingMode: PaintingMode;

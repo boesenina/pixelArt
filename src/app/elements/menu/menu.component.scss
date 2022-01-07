@@ -2,14 +2,17 @@
 
 .menu {
   background-color: map-get($mat-accent, "main");
-  color: #fff;
+  color:map-get($mat-primary, "main");
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 
 
 
   width: 300px;
-  min-height: calc(100vh - #{$header_height} - #{$footer_height});
-  max-height: calc(100vh - #{$header_height} - #{$footer_height});
+  min-height: calc(100vh - #{$header_height} - #{$footer_height} - 200px);
+  max-height: calc(100vh - #{$header_height} - #{$footer_height} - 200px);
 
 
   // .example-radio-group {
@@ -29,7 +32,7 @@
 
 
 
-
+.button-group{
   .example-radio-group {
     display: flex;
     flex-direction: column;
@@ -43,6 +46,6 @@
           color: map-get($mat-primary, "darker");
         }
   }
-
+}
 
 }

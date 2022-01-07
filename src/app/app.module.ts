@@ -1,6 +1,8 @@
+import { ColorPickerService } from './services/color-picker.service';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import {MatCardModule} from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,7 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
@@ -22,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { HttpClientModule } from '@angular/common/http';
+import { DrawingGridModule } from 'ngx-drawing-grid';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,9 +36,12 @@ import { MenuComponent } from './elements/menu/menu.component';
 import { ColorComponent } from './elements/color/color.component';
 import { GridComponent } from './elements/grid/grid.component';
 import { Grid1Component } from './elements/grid/grid1/grid1.component';
-import { Grid2Component } from './elemets/grid/grid2/grid2.component';
-import { Grid3Component } from './elemets/grid/grid3/grid3.component';
-import { Grid4Component } from './elemets/grid/grid4/grid4.component';
+import { ColorPickerComponent } from './components/color-picker/color-picker.component';
+import { Grid2Component } from './elements/grid/grid2/grid2.component';
+import { Grid3Component } from './elements/grid/grid3/grid3.component';
+import { Grid4Component } from './elements/grid/grid4/grid4.component';
+
+
 
 @NgModule({
   declarations: [
@@ -45,9 +52,11 @@ import { Grid4Component } from './elemets/grid/grid4/grid4.component';
     ColorComponent,
     GridComponent,
     Grid1Component,
+    ColorPickerComponent,
     Grid2Component,
     Grid3Component,
     Grid4Component,
+
   ],
   imports: [
     BrowserModule,
@@ -71,11 +80,13 @@ import { Grid4Component } from './elemets/grid/grid4/grid4.component';
     ReactiveFormsModule,
     MatCardModule,
     MatRadioModule,
-
+    DrawingGridModule,
+    MatIconModule,
+    MatTooltipModule
 
 
   ],
-  providers: [],
+  providers: [ColorPickerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

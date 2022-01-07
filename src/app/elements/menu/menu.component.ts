@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'pa-menu',
@@ -7,12 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  constructor() {
+
+
+   }
 
   ngOnInit(): void {
   }
 
 
-  favoriteSeason: string="";
-  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
+  favoriteGrid: string="8x8";
+  grids: string[] = ['8 x 8', '12 x 12', '16 x 16', '32 x 32'];
+
+
+
+
+  addNewItem(grid:any) {
+    console.log(grid);
+
+    this.newItemEvent.emit(grid);
+  }
 }

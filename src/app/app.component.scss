@@ -3,7 +3,9 @@
 
 .main{
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+ justify-content: center;
+ align-items: center;
 
 
 background-color: $dark-bg-tooltip;
@@ -18,14 +20,16 @@ overflow-y: auto;
 
 .menu{
 
-  justify-content: flex-start;
+  margin-right: 200px;
 
 }
 
 .grid1{
-  margin-right: 400px;
-  margin-top: 100px;
+//margin-left: 300px;
+  margin-top: 50px;
 }
 
 
 }
+
+

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'pa-root',
@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PixelArt';
+  grid:any;
+
+
+  addItem(value:any){
+    console.log(value);
+    this.grid = value;
+
+  }
 }
