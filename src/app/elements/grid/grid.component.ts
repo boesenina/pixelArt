@@ -1,4 +1,4 @@
-import { HostListener } from '@angular/core';
+import { HostListener, ViewChild } from '@angular/core';
 import { Component, ElementRef, OnInit,Input, OnDestroy } from '@angular/core';
 import { PaintingMode, DrawingGridService, Pixel } from 'ngx-drawing-grid';
 import { Subject } from 'rxjs';
@@ -17,6 +17,7 @@ export class GridComponent implements OnInit {
 
 
 
+
   constructor(
 
 
@@ -27,7 +28,10 @@ export class GridComponent implements OnInit {
 
 
   }
+// addItem(img){
+//   console.log(img);
 
+//}
 
 }
 

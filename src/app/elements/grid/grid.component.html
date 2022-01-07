@@ -5,6 +5,7 @@
     Drawing Grid
   </mat-toolbar>
 
+
   <div *ngIf="grid; then thenBlock else elseBlock"></div>
     <ng-template #thenBlock>
       <div *ngIf="grid=== '8 x 8';then thenBlock1"></div>
@@ -22,7 +23,7 @@
 
 
 <ng-template #elseBlock>
-  <pa-grid1></pa-grid1>
+  <pa-grid1 ></pa-grid1>
 
 </ng-template>
 
@@ -30,4 +31,6 @@
 
 
 <color-picker  ></color-picker>
+
+<pa-download></pa-download>
 </mat-card>

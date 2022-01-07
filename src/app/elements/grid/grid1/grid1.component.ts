@@ -1,7 +1,10 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { DownloadService } from 'src/app/services/download.service';
+import { CaptureService } from './../../../services/capture.service';
+import { Component, ElementRef, OnInit, ViewChild,Output,EventEmitter } from '@angular/core';
 import { PaintingMode, DrawingGridService, Pixel } from 'ngx-drawing-grid';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, takeUntil, tap } from 'rxjs';
 import { ColorPickerService } from 'src/app/services/color-picker.service';
+import { NgxCaptureService } from 'ngx-capture';
 
 @Component({
   selector: 'pa-grid1',
@@ -9,6 +12,10 @@ import { ColorPickerService } from 'src/app/services/color-picker.service';
   styleUrls: ['./grid1.component.scss']
 })
 export class Grid1Component implements OnInit {
+  [x: string]: any;
+
+  @ViewChild('screen', { static: true }) screen: any;
+  @Output() newItemEvent = new EventEmitter<string>();
 
   private readonly destroy$: Subject<void> = new Subject<void>();
 
@@ -17,13 +24,17 @@ export class Grid1Component implements OnInit {
   pixelSize = 60;
 
 
+
   private paintingMode: PaintingMode;
   private color: string;
+
 
   constructor(
     private host: ElementRef,
     private gridService: DrawingGridService,
-    private colorPickerService: ColorPickerService
+    private colorPickerService: ColorPickerService,
+    private captureService:NgxCaptureService,
+    private downloadService: DownloadService,
   ) {}
 
   ngOnInit() {
@@ -70,5 +81,17 @@ export class Grid1Component implements OnInit {
     }
 
     this.gridService.fillPixel(x, y, this.color);
+
+    this.captureService.getImage(this.screen.nativeElement, true)
+      .pipe(
+        tap(img => {
+          console.log(img);
+          this.downloadService.setData(img)
+        })
+      ).subscribe();
+  }
+
+  saveImage(img: string) {
+    console.log(img);
   }
 }

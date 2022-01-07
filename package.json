@@ -20,7 +20,10 @@
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "file-saver": "^2.0.5",
+    "ngx-capture": "^0.12.1",
     "ngx-drawing-grid": "^1.0.1",
+    "ngx-filesaver": "^13.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

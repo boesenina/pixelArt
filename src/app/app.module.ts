@@ -14,7 +14,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatGridListModule } from '@angular/material/grid-list';
-
+import {MatSelectModule} from '@angular/material/select';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -26,8 +26,8 @@ import { MatMenuModule } from '@angular/material/menu';
 
 import { HttpClientModule } from '@angular/common/http';
 import { DrawingGridModule } from 'ngx-drawing-grid';
-
-
+import { FileSaverModule } from 'ngx-filesaver';
+import { NgxCaptureModule } from 'ngx-capture';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './elements/header/header.component';
@@ -40,6 +40,7 @@ import { ColorPickerComponent } from './components/color-picker/color-picker.com
 import { Grid2Component } from './elements/grid/grid2/grid2.component';
 import { Grid3Component } from './elements/grid/grid3/grid3.component';
 import { Grid4Component } from './elements/grid/grid4/grid4.component';
+import { DownloadComponent } from './components/download/download.component';
 
 
 
@@ -56,6 +57,7 @@ import { Grid4Component } from './elements/grid/grid4/grid4.component';
     Grid2Component,
     Grid3Component,
     Grid4Component,
+    DownloadComponent,
 
   ],
   imports: [
@@ -82,7 +84,10 @@ import { Grid4Component } from './elements/grid/grid4/grid4.component';
     MatRadioModule,
     DrawingGridModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    FileSaverModule,
+    NgxCaptureModule,
+    MatSelectModule,
 
 
   ],
