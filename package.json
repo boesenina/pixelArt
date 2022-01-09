@@ -21,6 +21,8 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "file-saver": "^2.0.5",
+    "flood-fill": "^0.1.1",
+    "floodfill": "^2.1.1",
     "ngx-capture": "^0.12.1",
     "ngx-drawing-grid": "^1.0.1",
     "ngx-filesaver": "^13.0.0",

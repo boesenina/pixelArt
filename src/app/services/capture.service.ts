@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
-import html2canvas from "html2canvas";
-import { from, Observable, of } from "rxjs";
+import { Injectable } from '@angular/core';
+import html2canvas from 'html2canvas';
+import { from, Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class CaptureService {
   constructor() {}
@@ -30,7 +30,7 @@ export class CaptureService {
       html2canvas(screen, options)
         .then(
           (canv) => {
-            const img = canv.toDataURL("image/png");
+            const img = canv.toDataURL('image/png');
             return img;
           },
           (err) => {
@@ -41,13 +41,5 @@ export class CaptureService {
           throw new Error(res);
         })
     );
-  }
-
-  // TODO
-  private downloadImage(img: string) {
-    // this.canvas.nativeElement.src = img;
-    // this.downloadLink.nativeElement.href = img;
-    // this.downloadLink.nativeElement.download = 'test.png';
-    // this.downloadLink.nativeElement.click();
   }
 }

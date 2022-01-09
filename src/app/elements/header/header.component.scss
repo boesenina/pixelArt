@@ -7,4 +7,8 @@ align-items: center;
 justify-content: center;
 height: $header_height;
 background-color: map-get($mat-primary, "main");
+
+color:$dark-primary-text;
+font-family: cursive;
+font-size: 28pt;
 }

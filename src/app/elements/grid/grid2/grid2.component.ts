@@ -8,16 +8,15 @@ import { DownloadService } from 'src/app/services/download.service';
 @Component({
   selector: 'pa-grid2',
   templateUrl: './grid2.component.html',
-  styleUrls: ['./grid2.component.scss']
+  styleUrls: ['./grid2.component.scss'],
 })
 export class Grid2Component implements OnInit {
   @ViewChild('screen', { static: true }) screen: any;
   private readonly destroy$: Subject<void> = new Subject<void>();
 
   width: number = 32;
-  height: number= 32;
+  height: number = 32;
   pixelSize = 40;
-
 
   private paintingMode: PaintingMode;
   private color: string;
@@ -26,29 +25,30 @@ export class Grid2Component implements OnInit {
     private host: ElementRef,
     private gridService: DrawingGridService,
     private colorPickerService: ColorPickerService,
-    private captureService:NgxCaptureService,
-    private downloadService: DownloadService,
+    private captureService: NgxCaptureService,
+    private downloadService: DownloadService
   ) {}
 
   ngOnInit() {
-    this.gridService.paintingMode$.pipe(takeUntil(this.destroy$)).subscribe((paintingMode) => {
-      this.paintingMode = paintingMode;
-    });
+    this.gridService.paintingMode$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((paintingMode) => {
+        this.paintingMode = paintingMode;
+      });
 
-    this.colorPickerService.color$.pipe(takeUntil(this.destroy$)).subscribe((color) => {
-      this.color = color;
-    });
+    this.colorPickerService.color$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((color) => {
+        this.color = color;
+      });
 
     this.width = this.host.nativeElement.clientWidth;
     this.height = this.host.nativeElement.clientHeight - 64;
-
-
   }
 
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
-
   }
 
   onMouseDown(pixel: Pixel) {
@@ -72,12 +72,14 @@ export class Grid2Component implements OnInit {
     }
 
     this.gridService.fillPixel(x, y, this.color);
-    this.captureService.getImage(this.screen.nativeElement, true)
+    this.captureService
+      .getImage(this.screen.nativeElement, true)
       .pipe(
-        tap(img => {
+        tap((img) => {
           console.log(img);
-          this.downloadService.setData(img)
+          this.downloadService.setData(img);
         })
-      ).subscribe();
+      )
+      .subscribe();
   }
 }

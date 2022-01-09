@@ -2,7 +2,6 @@ import { HostListener } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { ColorPickerService } from 'src/app/services/color-picker.service';
 
-
 interface Color {
   name: string;
   value: string;
@@ -69,5 +68,9 @@ export class ColorPickerComponent {
 
   setColor(color: string) {
     this.colorPickerService.color = color;
+  }
+
+  setNewColor(newColor: string) {
+    this.colorPickerService.color = newColor;
   }
 }

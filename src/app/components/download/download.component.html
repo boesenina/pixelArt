@@ -1,19 +1,14 @@
-
 <div class="frame">
-
-
   <mat-form-field appearance="fill" class="select">
     <mat-label>Save as</mat-label>
-    <mat-select [(ngModel)]="selectedValue" (click)="setFormat()" >
+    <mat-select [(ngModel)]="selectedValue" (click)="setFormat()">
       <mat-option *ngFor="let format of formats" [value]="format.value">
-        {{format.viewValue}}
+        {{ format.viewValue }}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
+  <button (click)="download()" class="download">Download</button>
 
-  <button (click)="download()" class="download">
-    Download
-  </button>
-
+  <button (click)="fill()" class="fill">Fill</button>
 </div>

@@ -5,11 +5,11 @@
     Drawing Grid
   </mat-toolbar>
 
-
+<!--if a grid is picked-->
   <div *ngIf="grid; then thenBlock else elseBlock"></div>
     <ng-template #thenBlock>
       <div *ngIf="grid=== '8 x 8';then thenBlock1"></div>
-    <ng-template #thenBlock1> <pa-grid1></pa-grid1></ng-template>
+    <ng-template #thenBlock1> <pa-grid1 [fill]="fill" ></pa-grid1></ng-template>
     <div *ngIf="grid=== '12 x 12';then thenBlock2"></div>
     <ng-template #thenBlock2> <pa-grid2></pa-grid2></ng-template>
     <div *ngIf="grid=== '16 x 16';then thenBlock3"></div>
@@ -21,7 +21,7 @@
     </ng-template>
 
 
-
+<!--if no grid is picked-->
 <ng-template #elseBlock>
   <pa-grid1 ></pa-grid1>
 
@@ -32,5 +32,7 @@
 
 <color-picker  ></color-picker>
 
-<pa-download></pa-download>
+
+<!--to find the buttons-->
+<pa-download class="download" (newItemEvent)="addItem($event)"   ></pa-download>
 </mat-card>

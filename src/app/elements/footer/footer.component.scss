@@ -1,10 +1,14 @@
 @import "src/app/pixel-styles.scss";
 
-
-.title{
-
+.footer {
   display: flex;
-  align-items: center;
-  justify-content: center;
+
+  justify-content: flex-end;
+
   height: $footer_height;
-  background-color: map-get($mat-primary, "main");}
+  background-color: map-get($mat-primary, "main");
+  .title {
+    font-size: 12pt;
+    margin-right: 50px;
+  }
+}
